@@ -7,18 +7,17 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 origins = [
-        "http://localhost:5173",  
-        "https://celestia-cse.vercel.app"
+    "http://localhost:5173",  
+    "https://celestia-cse.vercel.app" 
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  
-    allow_credentials=True,  
-    allow_methods=["GET"],  
-    allow_headers=["*"],  
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],  
+    allow_headers=["*"], 
 )
-
 app.include_router(router=gallery_router, prefix="/gallery", tags=["Gallery"])
 
 app.include_router(router=event_router,prefix="/events",tags=["Events"])
