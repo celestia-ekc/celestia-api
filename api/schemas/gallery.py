@@ -7,7 +7,6 @@ class GalleryBase(BaseModel):
 
 class GalleryResponse(GalleryBase):
     id: int
-    created_at: datetime
 
     class Config:
         from_attributes = True  
